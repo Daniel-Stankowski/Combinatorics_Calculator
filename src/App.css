@@ -1,0 +1,25 @@
+.keyboard {
+    display: grid;
+    grid-template-columns: repeat(18, 1.25em);
+    grid-auto-rows: 2.5em;
+    gap: .25em;
+    justify-content: center;
+}
+.key {
+    color: white;
+    fill: white;
+    font-size: inherit;
+    grid-column : span 2;
+    border: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(200,1%,51%);
+    cursor: pointer;
+    border-radius: .25em;
+    user-select: none;
+}
+.key.large{
+    grid-column: span 4;
+}
