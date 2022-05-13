@@ -1,9 +1,9 @@
 import React from 'react';
 
+
 function NumberKey(props) {
-    let click = () => {
-        console.log(props.value);
-    }
-    return <button type="button" className="key typical" onClick={click}>{props.value}</button>;
+    return (<button type="button" className="key typical" onClick={() => props.onClick(props.text+props.value)} >
+        {props.value}
+        </button>);
 }
 export default NumberKey;
