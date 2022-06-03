@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "5eecc2a1986f0b491058",
-    "url": "/Combinatorics_Calculator/static/css/main.59324977.chunk.css"
+    "revision": "71c7395328d0f7aae3bb",
+    "url": "/Combinatorics_Calculator/static/css/main.590aabf1.chunk.css"
   },
   {
-    "revision": "5eecc2a1986f0b491058",
-    "url": "/Combinatorics_Calculator/static/js/main.5eecc2a1.chunk.js"
+    "revision": "71c7395328d0f7aae3bb",
+    "url": "/Combinatorics_Calculator/static/js/main.71c73953.chunk.js"
   },
   {
     "revision": "8b091dac83200d3fff1a",
@@ -20,7 +20,7 @@ self.__precacheManifest = [
     "url": "/Combinatorics_Calculator/static/media/nWk.2b4303e8.png"
   },
   {
-    "revision": "f234e10c0656693610fe45ec6029df69",
+    "revision": "3f17251e383b75341b148d0a5521fc98",
     "url": "/Combinatorics_Calculator/index.html"
   }
 ];
