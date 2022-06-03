@@ -1,9 +1,9 @@
 import React from 'react';
-import NumberKey from './Keys/NumberKey.js';
-import EnterKey from './Keys/EnterKey.js';
-import BackspaceKey from './Keys/BackspaceKey.js';
-import OperationKey from './Keys/OperationKey.js';
-import ClearKey from './Keys/ClearKey.js';
+import NumberKey from './KeysAndPopups/NumberKey.js';
+import EnterKey from './KeysAndPopups/EnterKey.js';
+import BackspaceKey from './KeysAndPopups/BackspaceKey.js';
+import OperationKey from './KeysAndPopups/OperationKey.js';
+import ClearKey from './KeysAndPopups/ClearKey.js';
 function MainPanel() {
     
     function display(){

@@ -157,6 +157,10 @@
     align-items: center;
     row-gap: 1px;
   }
+  .popup-error{
+      font-size: 1.4em;
+      max-width: 80%;
+  }
   .popup-input{
     font: inherit;
     font-size:  1em;

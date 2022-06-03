@@ -7,6 +7,7 @@ function EnterKey(props) {
     const parser = math.parser();
     const [anwser,setAnwser] = React.useState("");
     const [visibility,setVisibility] = React.useState(false);
+    const [error,setError] = React.useState(false);
     const popupCloseHandler = () => {
         setVisibility(false);
     }
@@ -33,16 +34,19 @@ function EnterKey(props) {
             }
         
     }
-        setVisibility(true);
         let tryAnwser;
         try{
             tryAnwser =parser.evaluate(valueToParse);
         } catch(error){
-
+            setError(true);
         }
         setAnwser(tryAnwser);
+        setVisibility(true);
     }
-    return <><AnwserPopup show={visibility} onClose={popupCloseHandler} anwser={anwser}/><button type="button" className="key large" onClick={calculateValue}>Enter</button></>;
+    return <><AnwserPopup show={visibility} 
+    onClose={popupCloseHandler} anwser={anwser} error={error} setError={setError}/>
+    <button type="button" className="key large" onClick={calculateValue}>
+        Enter</button></>;
 }
 
 export default EnterKey;
