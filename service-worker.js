@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/Combinatorics_Calculator/precache-manifest.23a097afc23a382c0cd3ed88435ff2f8.js"
+  "/Combinatorics_Calculator/precache-manifest.7b67c6b0af2339310840095271609e44.js"
 );
 
 workbox.clientsClaim();
