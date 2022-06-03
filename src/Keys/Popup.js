@@ -1,6 +1,12 @@
 import React, { useEffect } from 'react';
 
 function Popup(props){
+    const titles ={
+        nCk: "Combination",
+        Pn: "Permuatation",
+        nWk: "Variation with repetitions",
+        nVk: "Variation without repetitions"
+    }
     let operation = props.howManyArguments===2 ? props.value[1] : props.value[0];
     function kInput(){
         return props.howManyArguments===2 ? <><h1>k</h1><input type="number" id={"k"+operation} className="popup-input"></input></>:"";
@@ -50,8 +56,9 @@ function Popup(props){
         <div className="popup-inner">
             <form className="popup-form">
                 <label className="popup-label">
+                <h1 className="popup-title">{titles[props.value]}</h1>
                 <h1>n</h1>
-                <input type="number" id={"n"+operation} className="popup-input" min="0" max="20" step="1"></input>
+                <input type="number" id={"n"+operation} className="popup-input" min="0" max="99" step="1"></input>
                 {kInput()}
                 </label>
             </form>

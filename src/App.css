@@ -125,9 +125,15 @@
     position: relative;
     padding: 32px;
     width: 100%;
-    max-width: 250px;
-    min-height: 15em;
+    max-width: 18em;
+    min-height: 18em;
     background-color: hsl(0, 1%, 18%);
+    text-align: center;
+  }
+  .popup-title {
+    position: absolute;
+    min-width: 15em;
+    top: -2em;
   }
   .popup-btn{
     font:  inherit;
@@ -139,7 +145,7 @@
   }
   .popup-form{
     position: absolute;
-    top: 1em;
+    top: 3em;
   }
   .popup-label{
     color: white;
