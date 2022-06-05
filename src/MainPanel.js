@@ -45,14 +45,21 @@ function MainPanel() {
     }
     
     const [text, setText] = React.useState("");
+    const [numberOfChars,setNumberOfChars] = React.useState(0);
     const [cursor, setCursor] = React.useState(0);
     const [listener, setListener] = React.useState(true);
     const numberKeys = ['0','1','2','3','4','5','6','7','8','9'];
     const operationKeys = ['.','+','-','*','/','!','(',')'];
     const combinatoricsKeys = ['nCk','Pn','nWk','nVk','leftArrow','rightArrow'];
-    const numberKeysButtons = numberKeys.map(x => <NumberKey value={x} text={text} setText={setText} cursor={cursor} setCursor={setCursor}/>);
-    const operationKeysButtons = operationKeys.map(x => <NumberKey value={x} text={text} setText={setText} cursor={cursor} setCursor={setCursor}/>);
-    const combinatoricsKeysButtons = combinatoricsKeys.map(x => <OperationKey value={x} text={text} setText={setText} cursor={cursor} setCursor={setCursor} listeners={listener} setListener={setListener}/>);
+    const numberKeysButtons = numberKeys.map(x => <NumberKey value={x} 
+        text={text} setText={setText} cursor={cursor} setCursor={setCursor} numberOfChars={numberOfChars}
+         setNumberOfChars={setNumberOfChars}/>);
+    const operationKeysButtons = operationKeys.map(x => <NumberKey value={x} 
+        text={text} setText={setText} cursor={cursor} setCursor={setCursor} numberOfChars={numberOfChars}
+         setNumberOfChars={setNumberOfChars}/>);
+    const combinatoricsKeysButtons = combinatoricsKeys.map(x => <OperationKey value={x}
+         text={text} setText={setText} cursor={cursor} setCursor={setCursor} listeners={listener}
+          setListener={setListener} numberOfChars={numberOfChars} setNumberOfChars={setNumberOfChars}/>);
     React.useEffect(()=>{
         function handleKeyDown(e){
             const specialOperations = ['C','V','W'];
@@ -60,8 +67,12 @@ function MainPanel() {
                 return;
             }
             if(numberKeys.includes(e.key)||operationKeys.includes(e.key)){
+                if(numberOfChars>=200){
+                    return;
+                }
                 setText(text.substring(0,cursor)+e.key+text.substring(cursor))
                 setCursor(cursor+1);
+                setNumberOfChars(numberOfChars+1);
             } else if(e.code==='Backspace'){
                 if(cursor>0){
                 if(text[cursor-3]==='P'){
@@ -74,7 +85,7 @@ function MainPanel() {
                     setText(text.substring(0, cursor-1)+text.substring(cursor));
                     setCursor(cursor-1);
                 }
-                
+                setNumberOfChars(numberOfChars-1);
                 }
                 
             } else if(e.code==='ArrowLeft'){
@@ -114,7 +125,8 @@ function MainPanel() {
                     {numberKeysButtons}
                     <div className="spacing"></div>
                     {operationKeysButtons}
-                    <ClearKey text={text} cursor={cursor} setText={setText} setCursor={setCursor} />
+                    <ClearKey text={text} cursor={cursor} setText={setText} setCursor={setCursor}
+                    numberOfChars={numberOfChars} setNumberOfChars={setNumberOfChars} />
                     <div className="spacing"></div>
                     <EnterKey text={text} />
                     {combinatoricsKeysButtons}

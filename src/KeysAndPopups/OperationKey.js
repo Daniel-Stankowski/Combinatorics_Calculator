@@ -9,6 +9,7 @@ function OperationKey(props) {
     return (<><Popup onClose={popupCloseHandler} show={visibility}
         howManyArguments={props.value.length>3?0:props.value.length-1} value={props.value}
         text={props.text} setText={props.setText} cursor={props.cursor} setCursor={props.setCursor}
+        numberOfChars={props.numberOfChars} setNumberOfChars={props.setNumberOfChars}
         />
         <button type="button" className={"key typical "+props.value} onClick={() => 
     {

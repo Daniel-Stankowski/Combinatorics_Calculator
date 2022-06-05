@@ -15,6 +15,8 @@ function Popup(props){
     const closeHandler = (e) => {
         setShow(false);
         props.onClose(false);
+        if(props.numberOfChars>=200)
+            return;
         let n=document.getElementById(('n'+operation)).value.substring(0,2);
         document.getElementById(('n' +operation)).value="";
         let nIntValue=parseInt(n);
@@ -45,6 +47,7 @@ function Popup(props){
         props.setText(props.text.substring(0,props.cursor)+n+operation+k+props.text.substring(props.cursor)) :
         props.setText(props.text.substring(0,props.cursor)+operation+n+props.text.substring(props.cursor))
         props.setCursor(props.cursor+props.howManyArguments*2+1);
+        props.setNumberOfChars(props.numberOfChars+1);
     }
     useEffect(() => {
         setShow(props.show);
